@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      background: rgb(0,0,0);
+      background: linear-gradient(148deg, rgba(65,65,65,100) 40%, rgba(164,164,164,0) 100%) no-repeat center center fixed, url(/img/bg.jpg) no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+  </style>
+</head>
+<body>
+  <div id="application"></div>
+  <script type="module">
+    import { html, render } from 'lit';
+    import './tsc-out/src/GradeConverter.js';
+
+    render(
+      html`
+        <grade-converter>
+        </grade-converter>
+      `,
+      document.querySelector('#application')
+    );
+  </script>
+</body>
+</html>
