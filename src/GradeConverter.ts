@@ -6,15 +6,26 @@ import * as gc from './grade_converter.js'
 @customElement('grade-converter')
 export class GradeConverter extends LitElement {
   static styles = css`
+    @media only screen and (max-width: 490px) {
+      :host {
+        --primary-font-size: 1.0em;
+        --result-font-size: 2.0em;
+      }
+    }
+
+
 
     :host {
-      font-size: 1.7em;
+      font-size: var(--primary-font-size, 1.7em);
       display: block;
       font-weight: bold;
       padding: 1em;
       color: var(--grade-converter-primary-color, #000);
       --grade-converter-primary-color: #0093E9;
+      --heading-font-size: 2.5em;
+      --result-font-size: 3.2em;
     }
+
 
     #resultContainer {
       float: left;
@@ -22,7 +33,7 @@ export class GradeConverter extends LitElement {
     }
 
     #result {
-      font-size: 3.2em;
+      font-size: var(--result-font-size);
       margin-top: 0;
     }
 
@@ -31,7 +42,7 @@ export class GradeConverter extends LitElement {
     }
 
     h1 {
-      font-size: 2.5em;
+      font-size: var(--heading-font-size);
       padding: 0;
       margin: 0;
       border; 0;
