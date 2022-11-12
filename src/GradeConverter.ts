@@ -114,12 +114,7 @@ export class GradeConverter extends LitElement {
 
   __knownSystemChanged(e: Event) {
     const input = e.target as HTMLInputElement
-    console.log("System Changed", input.value)
-
-    console.log("Old known grade", this.knownGrade)
     this.knownGrade = gc.convertGrade(this.knownSystem, this.knownGrade, input.value)[0]
-    console.log("New known grade", this.knownGrade)
-
     this.knownSystem = input.value
     this.__calculateUnknownGrade()
     this.requestUpdate()
@@ -127,7 +122,6 @@ export class GradeConverter extends LitElement {
 
   __unknownSystemChanged(e: Event) {
     const input = e.target as HTMLInputElement
-    console.log("Unknown system Changed", input.value)
     this.unknownSystem = input.value
     this.__calculateUnknownGrade()
   }
@@ -135,7 +129,6 @@ export class GradeConverter extends LitElement {
 
   __knownGradeChanged(e: Event) {
     const input = e.target as HTMLInputElement
-    console.log("Grade Changed", input.value)
     this.knownGrade = input.value
     this.__calculateUnknownGrade()
   }
@@ -156,7 +149,6 @@ export class GradeConverter extends LitElement {
   }
 
   __knownGradeListInputHTML() {
-    console.log("Updating known grade list!")
     return html`
       <select
         id="knownGrade"
